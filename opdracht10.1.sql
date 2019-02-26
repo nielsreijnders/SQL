@@ -45,7 +45,9 @@ WHERE pitch = (	SELECT COUNT(pitch)
 				HAVING pitch = 10.0);
 
 -- 6. Selecteer de artiest en het aantal nummers waarmee de artiest in de lijst staat. Je mag GROUP BY niet gebruiken. (78 rows)
-
+SELECT artists, COUNT(artists) AS Hits
+FROM track
+GROUP BY artists;
 
 -- 7. Selecteer de nummers die qua tempo tussen Redbone van Childish Gambino en El Amante van Nicky Jam inzitten. Deze nummers mogen niet getoond worden. (3 rows)
 SELECT *
