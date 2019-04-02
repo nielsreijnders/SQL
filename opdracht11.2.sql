@@ -21,32 +21,32 @@ WHERE Country = 'Mexico';
 
 -- 3. Toon alle orderitems met het ordernummer van alle orderitems die duurder zijn dan 100 dollar. (46 rows)
 SELECT *
-FROM [OrderItem]
+FROM OrderItem
 JOIN [Order]
-ON [OrderItem].[OrderId] = [Order].[Id]
-WHERE [UnitPrice] > 100;
+ON OrderItem.OrderId = [Order].Id
+WHERE UnitPrice > 100;
 
 -- 4. Toon de productnamen, prijzen per stuk en aantallen van alle producten in order met nummer 542410. (3 rows)
 SELECT ProductName, OrderItem.UnitPrice, Quantity
-FROM [Product]
-JOIN [OrderItem]
-ON [Product].[Id] = [OrderItem].[ProductId]
+FROM Product
+JOIN OrderItem
+ON Product.Id = OrderItem.ProductId
 JOIN [Order]
-ON [OrderItem].[OrderId] = [Order].Id
-WHERE [OrderNumber] = 542410;
+ON OrderItem.OrderId = [Order].Id
+WHERE OrderNumber = 542410;
 
 -- 5. Wat is het totaal aantal producten van de klant met ID 6.
 SELECT *
-FROM [OrderItem]
+FROM OrderItem
 JOIN [Order]
-ON [OrderItem].[OrderId] = [Order].Id
-WHERE [CustomerId] = 6;
+ON OrderItem.OrderId = [Order].Id
+WHERE CustomerId = 6;
 
 -- 6. Toon de ordernummers van de orders waarin meer dan 200 producten zijn verkocht. (20 rows)
-SELECT [OrderNumber]
+SELECT OrderNumber
 FROM [Order]
 JOIN OrderItem
-ON [Order].[Id] = OrderItem.OrderId
+ON [Order].Id = OrderItem.OrderId
 WHERE OrderItem.Quantity > 200;
 
 -- 7. Selecteer alle klanten die ooit een product van leverancier 'Zaanse Snoepfabriek' hebben besteld. Je moet verplicht joins gebruiken. (27 rows)
