@@ -28,7 +28,7 @@ SELECT MIN(birthdate) FROM person
 )
 
 -- 5. Toon de datum en tijd van nu met behulp van een scalaire functie en toon dit als 'dag-maand-jaar'(1 kolom) en 'uren:minuten:seconden'(1 kolom).
-	SELECT convert(varchar, getdate(), 110) AS Datum, convert(varchar, getdate(), 8) AS TIJD
+SELECT convert(varchar, getdate(), 110) AS Datum, convert(varchar, getdate(), 8) AS TIJD
 
 -- 6. Toon de voornaam en achternaam van alle personen die in maart jarig zijn en sorteer het resultaat op geboortedag.
 --    Toon hierbij de geboortedatum opgesplitst in dag, maand en jaar (3 kolommen).
