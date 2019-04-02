@@ -45,19 +45,19 @@ WHERE [CustomerId] = 6;
 -- 6. Toon de ordernummers van de orders waarin meer dan 200 producten zijn verkocht. (20 rows)
 SELECT [OrderNumber]
 FROM [Order]
-JOIN [OrderItem]
-ON [Order].[Id] = [OrderItem].[OrderId]
-WHERE [OrderItem].[Quantity] > 200;
+JOIN OrderItem
+ON [Order].[Id] = OrderItem.OrderId
+WHERE OrderItem.Quantity > 200;
 
 -- 7. Selecteer alle klanten die ooit een product van leverancier 'Zaanse Snoepfabriek' hebben besteld. Je moet verplicht joins gebruiken. (27 rows)
 SELECT *
-FROM [Customer]
+FROM Customer
 JOIN [Order]
-ON [Customer].[Id] = [Order].[CustomerId]
-JOIN [OrderItem]
-ON [Order].[Id] = [OrderItem].[OrderId]
-JOIN [Product]
-ON [OrderItem].[ProductId] = [Product].[Id]
-JOIN [Supplier]
-ON [Product].[SupplierId] = [Supplier].[Id]
-WHERE [CompanyName] = 'Zaanse Snoepfabriek';
+ON Customer.Id = [Order].CustomerId
+JOIN OrderItem
+ON [Order].Id = OrderItem.OrderId
+JOIN Product
+ON OrderItem.ProductId = Product.Id
+JOIN Supplier
+ON Product.SupplierId = Supplier.Id
+WHERE CompanyName = 'Zaanse Snoepfabriek';
