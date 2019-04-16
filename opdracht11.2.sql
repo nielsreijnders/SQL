@@ -1,9 +1,12 @@
+USE shop;
+GO
+
 -- Opdracht 11.2
 
 -- 1. Toon alle producten met de naam van de leverancier. (78 rows)
 SELECT ProductName, ContactName
-FROM Product
-LEFT JOIN Supplier
+FROM Product 
+JOIN Supplier
 ON Supplier.ContactName = Product.ProductName;
 
 
