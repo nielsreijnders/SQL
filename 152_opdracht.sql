@@ -3,7 +3,7 @@ GO
 
 -- 1a. Maak een procedure aan waarmee je personen kan zoeken op basis van voor- of achternaam.
 --    Toon van deze personen het ID, voornaam, achternaam, geslacht, geboortedatum en woonplaats
-ALTER PROC spName @firstName nvarchar(30) = NULL, @lastName nvarchar(30) = NULL
+CREATE PROC spName @firstName nvarchar(30) = NULL, @lastName nvarchar(30) = NULL
 AS
 SELECT personId, firstName, lastName, gender, birthdate, ipAddress
 FROM person
