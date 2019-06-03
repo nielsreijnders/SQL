@@ -2,7 +2,7 @@ USE WorldEvents;
 GO
 
 -- 1. Maak een stored procedure waarmee je per continents de events kan zien. De variabele die je opgeeft is het continent.
-ALTER PROC spContinent @continent nvarchar(30) = NULL
+CREATE PROC spContinent @continent nvarchar(30) = NULL
 AS
 SELECT EventName, ContinentName
 FROM tblEvent
@@ -17,7 +17,7 @@ EXECUTE spContinent 'Asia'
 EXECUTE spContinent 'Europe'
 
 -- 3. Maak een stored procedure waarmee je per categorie de events kan zien. De variabele die je opgeeft is de categorie.
-ALTER PROC spCategory @category nvarchar(30) = NULL
+CREATE PROC spCategory @category nvarchar(30) = NULL
 AS
 SELECT *
 FROM tblCategory
@@ -31,7 +31,7 @@ EXECUTE spCategory 'Politics'
 EXECUTE spCategory 'Old'
 
 -- 5. Maak een stored procedure waarmee je per categorie en jaartal de events kan zien. De variabele die je opgeeft zijn de categorie en jaartal.
-ALTER PROC spEvents @year nvarchar(30) = NULL, @category nvarchar(30) = NULL
+CREATE PROC spEvents @year nvarchar(30) = NULL, @category nvarchar(30) = NULL
 AS
 SELECT *
 FROM tblEvent

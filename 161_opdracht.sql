@@ -47,7 +47,8 @@ ALTER LOGIN Niels
 WITH NAME = NielsReijnders;
 
 -- 7. Geef de eerste gebruiker de rechten om alle functies binnen SQL Server uit te voeren.
-EXEC SP_ADDSRVROLEMEMBER NielsReijnders, sysadmin; 
+EXEC SP_ADDSRVROLEMEMBER NielsReijnders, sysadmin; 
+
 
 -- 8. Geef de tweede gebruiker de rechten om logins aan te maken en te beheren..
 EXEC SP_ADDSRVROLEMEMBER Niels2, securityadmin; 
